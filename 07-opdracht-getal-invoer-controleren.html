@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    "use strict";
+    //Maak een functie expressie met naam controleAantal
+    const controleAantal = (input) => {
+        if (input == null) {
+            document.write("u heeft geannuleerd!");
+            return false;
+        } else if (input.length == 0) {
+            document.write("u heeft niets ingegeven !");
+            return false;
+        } else if (!isNaN(input)) {
+            return (input)
+        } else {
+            document.write("Dit is geen correct ingave");
+            return false;
+        }
+    }
+    //Maak een functie expressie controleGetal
+    let controleGetal = (input) => {
+        if (input == null || input.length == 0 || isNaN(input)) {
+            return "fout";
+        }
+        return input
+    }
+
+    let getallen = [];
+    let aantal = prompt('Hoeveel getallen wil je ingeven?');
+    aantal = controleAantal(aantal);
+    console.log(aantal);
+    if (aantal != false) {
+        for (let i = 0; i < aantal; i++) {
+            const getal = prompt(`Geef getal ${i + 1} in`);
+            getallen[i] = controleGetal(getal);
+        }
+        document.write(getallen);
+    }
+    </script>
+</body>
+
+</html>
